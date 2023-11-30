@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula 1</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/imagem256.png">
+    <meta name="theme-color" content="red"/>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/db.js"></script>
+  </head>
+  <body class="fullscreen">
+    <div class="container">
+        <h1 class="title">Cadastro de Pistas de Fórmula 1</h1>
+        
+        <div id="entrada">
+            <div class="inputs">
+                <label>Nome da Pista</label>
+                <input required type="text" id="nomePista" placeholder="Digite o nome da pista">
+
+                <label>País</label>
+                <input required] type="text" id="pais" placeholder="Digite o país da pista">
+
+                <label>Quantidade de Curvas</label>
+                <input required type="number" id="quantidadeCurvas" placeholder="Digite a quantidade de curvas">
+
+                <label>Data do Grande Prêmio</label>
+                <input required type="date" id="dataGrandePremio">
+
+                <label>Licença FIA</label>
+<select id="licencaFIA">
+  <option value=" ">Selecione </option>
+    <option value="1">Grau 1</option>
+    <option value="2">Grau 2</option>
+    <option value="3">Grau 3</option>
+</select>
+
+<label>Estilo de Pista</label>
+<select id="estiloPista">
+  <option value="  ">Selecione um estilo</option>
+    <option value="estrada">Circuito de Estrada</option>
+    <option value="rua">Circuito de Rua</option>
+    <option value="autodromo">Autódromo</option>
+</select>
+              
+
+                <button id="btnCadastro">Cadastrar</button>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <button id="btnCarregar">Listar Pistas</button>
+        </div>
+
+        <div style="margin-top: 85px;" id="resultados"></div>
+    </div>
+
+  </body>
+</html>
