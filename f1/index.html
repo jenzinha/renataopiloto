@@ -54,10 +54,23 @@
             <br/>
             <br/>
             <button id="btnCarregar">Listar Pistas</button>
+            <input type="text" id="inputBuscar" placeholder="Digite o nome da pista">
+<button id="btnBuscar">Buscar Pista</button>
+<label>Latitude</label>
+<input required type="text" id="latitude" placeholder="Digite a latitude">
+
+<label>Longitude</label>
+<input required type="text" id="longitude" placeholder="Digite a longitude">
+<div id="map" style="height: 300px;"></div>
         </div>
-
         <div style="margin-top: 85px;" id="resultados"></div>
+        
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
+    <style>
+      #map {
+        display: none;
+      }
+    </style>
   </body>
 </html>
