@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html class="patterns pt1" lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,57 +16,86 @@
   <body class="fullscreen">
     <div class="container">
         <h1 class="title">Cadastro de Pistas de Fórmula 1</h1>
-        
-        <div id="entrada">
-            <div class="inputs">
-                <label>Nome da Pista</label>
-                <input required type="text" id="nomePista" placeholder="Digite o nome da pista">
+        <div class="underline">
+        </div>
+<div class="icon_wrapper">
+     <img class="carro" src="./images/carro-de-corrida.png"/>
+</div>
 
-                <label>País</label>
-                <input required] type="text" id="pais" placeholder="Digite o país da pista">
+<form action="#" id="contact_form">
+<div id="entrada">
+<div class="inputs">
+            
+        <!--NOME-->    
+<div class="nome">
+      <input required type="text" id="nomePista" placeholder="Digite o nome da pista">
+</div>
 
-                <label>Quantidade de Curvas</label>
-                <input required type="number" id="quantidadeCurvas" placeholder="Digite a quantidade de curvas">
-
-                <label>Data do Grande Prêmio</label>
-                <input required type="date" id="dataGrandePremio">
-
-                <label>Licença FIA</label>
-<select id="licencaFIA">
-  <option value=" ">Selecione </option>
-    <option value="1">Grau 1</option>
-    <option value="2">Grau 2</option>
-    <option value="3">Grau 3</option>
+        <!--PAIS-->
+<div class="pais">    
+      <input required] type="text" id="pais" placeholder="Digite o país da pista">
+</div>
+            
+        <!--QUANTIDADE-->
+<div class="quanti">   
+    <input required type="number" id="quantidadeCurvas" placeholder="Digite a quantidade de curvas">
+</div>
+                
+        <!--DATA-->
+<div class="dataPre">
+    <label>Data do Grande Prêmio</label>
+    <input required type="date" id="dataGrandePremio">
+</div>
+       
+        <!--LICENÇA-->
+<div class="licenca">
+     <select id="licencaFIA">
+        <option value=" ">Selecione Licença FIA</option>
+        <option value="1">Grau 1</option>
+        <option value="2">Grau 2</option>
+        <option value="3">Grau 3</option>
 </select>
+</div>
 
-<label>Estilo de Pista</label>
+        <!--ESTILO-->
+<div class="estiloP">
 <select id="estiloPista">
-  <option value="  ">Selecione um estilo</option>
+    <option value="">Selecione um estilo de Pista</option>
     <option value="estrada">Circuito de Estrada</option>
     <option value="rua">Circuito de Rua</option>
     <option value="autodromo">Autódromo</option>
 </select>
-              
+</div>
 
-                <button id="btnCadastro">Cadastrar</button>
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <button id="btnCarregar">Listar Pistas</button>
-            <input type="text" id="inputBuscar" placeholder="Digite o nome da pista">
-<button id="btnBuscar">Buscar Pista</button>
-<label>Latitude</label>
+<button id="btnCadastro">Cadastrar</button>
+<button id="btnCarregar">Listar Pistas</button>
+</div> 
+
+        <!--NOMEPISTA-->
+<input type="text" id="inputBuscar" placeholder="Digite o nome da pista">
+
+
+
+        <!--LATITUDE-->
+<div class="latitude">
 <input required type="text" id="latitude" placeholder="Digite a latitude">
+</div>
 
-<label>Longitude</label>
+        <!--LONGITUDE-->
+<div class="longitude">
 <input required type="text" id="longitude" placeholder="Digite a longitude">
+</div>
+
+<button id="btnBuscar">Buscar Pista</button>
+<img class="bandeira" src="./images/bandeira-de-chegada.png"/>
+
 <div id="map" style="height: 300px;"></div>
-        </div>
-        <div style="margin-top: 85px;" id="resultados"></div>
-        
-    </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
+</div>
+</form>
+<div style="margin-top: 85px;" id="resultados"></div>
+</div>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
     <style>
       #map {
         display: none;
