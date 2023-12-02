@@ -62,7 +62,8 @@ async function adicionarPistaFormula1() {
         });
         await tx.done;
         limparCampos();
-        exibirNoMapa(parseFloat(latitude), parseFloat(longitude));
+        document.getElementById('map').style.display = 'none';
+      
         console.log('Pista cadastrada com sucesso!');
     } catch (error) {
         console.error('Erro ao cadastrar pista:', error);
@@ -112,6 +113,7 @@ async function listarPistasFormula1() {
                     <p>Quantidade de Curvas: ${pista.quantidadeCurvas}</p>
                     <p>Data do Grande Prêmio: ${pista.dataGrandePremio}</p>
                     <p>Grau de Licença FIA: ${pista.licencaFIA}</p>
+                    <p>Estilo de pista: ${pista.estiloPista}</p>
                     <button class="btnMostrarMapa" data-latitude="${pista.latitude}" data-longitude="${pista.longitude}">Mostrar Mapa</button>
                     </div> </center>`;
         });
@@ -133,6 +135,8 @@ function limparCampos() {
     document.getElementById("dataGrandePremio").value = '';
     document.getElementById("estiloPista").value = '';
     document.getElementById("licencaFIA").value = '';
+    document.getElementById("latitude").value = '';
+    document.getElementById("longitude").value = '';
 }
 
 async function buscarPistaFormula1() {
@@ -155,6 +159,7 @@ async function buscarPistaFormula1() {
                 <p>Quantidade de Curvas: ${pistaEncontrada.quantidadeCurvas}</p>
                 <p>Data do Grande Prêmio: ${pistaEncontrada.dataGrandePremio}</p>
                 <p>Grau de Licença FIA: ${pistaEncontrada.licencaFIA}</p>
+                
             </div> </center>`;
             listagem(divPista);
         } else {
