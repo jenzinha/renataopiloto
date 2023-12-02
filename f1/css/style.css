@@ -297,3 +297,12 @@ select::-ms-expand {
     background-image: -webkit-linear-gradient(rgba(28, 28, 28, 0.2) 50%, transparent 50%, transparent);
     background-image: linear-gradient(rgba(0, 0, 0, 0.82) transparent 50%, transparent);
   }
+
+  #estiloPista:hover, #licencaFIA:hover{
+    cursor: pointer;
+  }
+
+  #estiloPista:active, #licencaFIA:active{
+    cursor: grabbing;
+
+  }
