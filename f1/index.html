@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formula 1</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image" href="./images/iconeCarro.png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
@@ -67,6 +67,20 @@
 </select>
 </div>
 
+
+
+
+        <!--LATITUDE-->
+<div class="latitude">
+        <input required type="text" id="latitude" placeholder="Digite a latitude">
+</div>
+                
+        <!--LONGITUDE-->
+        <div class="longitude">
+        <input required type="text" id="longitude" placeholder="Digite a longitude">
+</div>
+                
+
 <button id="btnCadastro">Cadastrar</button>
 <button id="btnCarregar">Listar Pistas</button>
 </div> 
@@ -74,28 +88,17 @@
         <!--NOMEPISTA-->
 <input type="text" id="inputBuscar" placeholder="Digite o nome da pista">
 
-
-
-        <!--LATITUDE-->
-<div class="latitude">
-<input required type="text" id="latitude" placeholder="Digite a latitude">
-</div>
-
-        <!--LONGITUDE-->
-<div class="longitude">
-<input required type="text" id="longitude" placeholder="Digite a longitude">
-</div>
-
 <button id="btnBuscar">Buscar Pista</button>
 <img class="bandeira" src="./images/bandeira-de-chegada.png"/>
 
-<div id="map" style="height: 300px;"></div>
+<br/>
+<div id="map" style="height: 300px; margin-top: 30px;"></div>
 </div>
 </form>
-<div style="margin-top: 85px;" id="resultados"></div>
+<div style="margin-top: 80px;" id="resultados"></div>
 </div>
     
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
+<script style="margin-top: 30px;" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
     <style>
       #map {
         display: none;

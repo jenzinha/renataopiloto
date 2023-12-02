@@ -187,7 +187,7 @@ select::-ms-expand {
 }
 
 
-#btnCadastro{
+#btnCadastro, #btnMostrarMapa{
   vertical-align: middle;
   float: left;
   border-radius: 10px;
@@ -205,6 +205,30 @@ select::-ms-expand {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+button{
+  border-radius: 10px;
+  background: none;
+  border: solid 2px #474544;
+  color: #474544;
+  cursor: pointer;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 2px 0 10px 9px;
+}
+
+button:hover{
+  color: #dadad4;
+  background-color: #474544;
 }
 
 #btnCarregar{
@@ -296,4 +320,13 @@ select::-ms-expand {
     background-color: rgb(57, 57, 57);
     background-image: -webkit-linear-gradient(rgba(28, 28, 28, 0.2) 50%, transparent 50%, transparent);
     background-image: linear-gradient(rgba(0, 0, 0, 0.82) transparent 50%, transparent);
+  }
+
+  #estiloPista:hover, #licencaFIA:hover{
+    cursor: pointer;
+  }
+
+  #estiloPista:active, #licencaFIA:active{
+    cursor: grabbing;
+
   }
