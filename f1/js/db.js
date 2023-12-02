@@ -63,9 +63,9 @@ async function adicionarPistaFormula1() {
         await tx.done;
         limparCampos();
         exibirNoMapa(parseFloat(latitude), parseFloat(longitude));
-        console.log('Pista de Fórmula 1 cadastrada com sucesso!');
+        console.log('Pista cadastrada com sucesso!');
     } catch (error) {
-        console.error('Erro ao cadastrar pista de Fórmula 1:', error);
+        console.error('Erro ao cadastrar pista:', error);
         tx.abort();
     }
 }
@@ -74,6 +74,9 @@ function exibirNoMapa(latitude, longitude) {
         console.error('Coordenadas inválidas.');
         return;
     }
+
+    const mapTitle = document.getElementById('mapTitulo');
+    mapTitle.style.display = 'block'; 
 
     const myLatlng = new google.maps.LatLng(latitude, longitude);
     const mapOptions = {
@@ -86,8 +89,9 @@ function exibirNoMapa(latitude, longitude) {
     const marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: 'Local da Pista de Fórmula 1',
+        title: 'Local da Pista',
     });
+
     document.getElementById('map').style.display = 'block';
 }
 
@@ -102,14 +106,14 @@ async function listarPistasFormula1() {
 
     if (pistasFormula1) {
         const divLista = pistasFormula1.map(pista => {
-            return `<div class="item">
+            return `<center> <div class="item">
                     <p>Nome da Pista: ${pista.nomePista}</p>
                     <p>País: ${pista.pais}</p>
                     <p>Quantidade de Curvas: ${pista.quantidadeCurvas}</p>
                     <p>Data do Grande Prêmio: ${pista.dataGrandePremio}</p>
                     <p>Grau de Licença FIA: ${pista.licencaFIA}</p>
                     <button class="btnMostrarMapa" data-latitude="${pista.latitude}" data-longitude="${pista.longitude}">Mostrar Mapa</button>
-                    </div>`;
+                    </div> </center>`;
         });
         listagem(divLista.join(' '));
         document.querySelectorAll('.btnMostrarMapa').forEach(button => {
@@ -145,13 +149,13 @@ async function buscarPistaFormula1() {
     try {
         const pistaEncontrada = await index.get(nomePistaBusca);
         if (pistaEncontrada) {
-            const divPista = `<div class="item">
+            const divPista = ` <center> <div class="item">
                 <p>Nome da Pista: ${pistaEncontrada.nomePista}</p>
                 <p>País: ${pistaEncontrada.pais}</p>
                 <p>Quantidade de Curvas: ${pistaEncontrada.quantidadeCurvas}</p>
                 <p>Data do Grande Prêmio: ${pistaEncontrada.dataGrandePremio}</p>
                 <p>Grau de Licença FIA: ${pistaEncontrada.licencaFIA}</p>
-            </div>`;
+            </div> </center>`;
             listagem(divPista);
         } else {
             console.log(`Pista com o nome '${nomePistaBusca}' não encontrada.`);
@@ -161,6 +165,35 @@ async function buscarPistaFormula1() {
         console.error('Erro ao buscar pista de Fórmula 1:', error);
     }
 }
+
+async function deletarPistaFormula1() {
+    const nomePistaDeletar = document.getElementById('inputBuscar').value;
+    if (!nomePistaDeletar) {
+        console.log('Nome da pista não fornecido para exclusão.');
+        return;
+    }
+
+    const tx = await db.transaction('pistaF1', 'readwrite');
+    const store = tx.objectStore('pistaF1');
+
+    try {
+        const pistaDeletar = await store.get(nomePistaDeletar);
+        if (pistaDeletar) {
+            await store.delete(nomePistaDeletar);
+            await tx.done;
+            console.log(`Pista '${nomePistaDeletar}' deletada com sucesso.`);
+            listarPistasFormula1(); 
+        } else {
+            console.log(`Pista com o nome '${nomePistaDeletar}' não encontrada para exclusão.`);
+        }
+    } catch (error) {
+        console.error('Erro ao deletar pista de Fórmula 1:', error);
+        tx.abort();
+    }
+}
+
+
+document.getElementById('btnDeletar').addEventListener('click', deletarPistaFormula1);
 
 function listagem(text) {
     document.getElementById('resultados').innerHTML = text;

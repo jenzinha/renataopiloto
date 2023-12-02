@@ -29,7 +29,7 @@ form {
     margin: 50px 0;
 }
 
-h1 {
+h1,h2 {
     color: #474544;
     font-size: 32px;
     font-weight: 700;
@@ -277,7 +277,29 @@ button:hover{
     background: #474544;
     color: #F2F3EB;
 }
+.item {
+  background-color: #cbc8c8; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin-bottom: 20px; 
+  text-transform: uppercase;
+  width: 50%;
+  border: solid 2px #474544;
+}
 
+.item p {
+  margin: 0 0 10px; 
+  font-size: 16px; 
+  color: #474544; 
+}
+
+
+.item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-4px); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
 @media screen and (max-width: 768px) {
     #container {
       margin: 20px auto;
