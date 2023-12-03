@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="patterns pt1" lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula 1</title>
+    <link rel="icon" type="image" href="/assets/iconeCarro-RmOIBdJj.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="manifest" href="data:application/json;base64,ew0KICAgICJuYW1lIjogInBpc3RhcyIsDQogICAgInNob3J0X25hbWUiOiAiZjEiLA0KICAgICJpY29ucyI6IFsNCiAgICAgICAgew0KICAgICAgICAgICAgInNyYyI6ICJpbWFnZXMvaW1hZ2VtMjU2LnBuZyIsDQogICAgICAgICAgICAic2l6ZXMiOiAiMjU2eDI1NiIsDQogICAgICAgICAgICAidHlwZSI6ICJpbWFnZS9wbmciDQogICAgICAgIH0sDQogICAgICAgIHsNCiAgICAgICAgICAgICJzcmMiOiAiaW1hZ2VzL2ltYWdlbTUxMi5wbmciLA0KICAgICAgICAgICAgInNpemVzIjogIjUxMng1MTIiLA0KICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIg0KICAgICAgICB9DQogICAgXSwNCiAgICAibGFuZyI6ICJwdC1CUiIsDQogICAgInN0YXJ0X3VybCI6ICIvaW5kZXguaHRtbCIsDQogICAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsDQogICAgImJhY2tncm91bmRfY29sb3IiOiAid2hpdGUiLA0KICAgICJ0aGVtZV9jb2xvciI6ICJ3aGl0ZSINCn0=">
+    <link rel="apple-touch-icon" href="data:image/png;base64,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">
+    <meta name="theme-color" content="red"/>
+    <script type="module" crossorigin src="/assets/index-gjmfBr5J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-GkcVr1Sw.css">
+  </head>
+  <body class="fullscreen">
+    <div class="container">
+        <h1 class="title">Cadastro de Pistas de Fórmula 1</h1>
+        <div class="underline">
+        </div>
+<div class="icon_wrapper">
+     <img class="carro" src="/assets/carro-de-corrida-OmMS3Jiw.png"/>
+</div>
+
+<form action="#" id="contact_form">
+<div id="entrada">
+<div class="inputs">
+            
+        <!--NOME-->    
+<div class="nome">
+      <input required type="text" id="nomePista" placeholder="Digite o nome da pista">
+</div>
+
+        <!--PAIS-->
+<div class="pais">    
+      <input required] type="text" id="pais" placeholder="Digite o país da pista">
+</div>
+            
+        <!--QUANTIDADE-->
+<div class="quanti">   
+    <input required type="number" id="quantidadeCurvas" placeholder="Digite a quantidade de curvas">
+</div>
+                
+        <!--DATA-->
+<div class="dataPre">
+    <label>Data do Grande Prêmio</label>
+    <input required type="date" id="dataGrandePremio">
+</div>
+       
+        <!--LICENÇA-->
+<div class="licenca">
+     <select id="licencaFIA">
+        <option value=" ">Selecione Licença FIA</option>
+        <option value="1">Grau 1</option>
+        <option value="2">Grau 2</option>
+        <option value="3">Grau 3</option>
+</select>
+</div>
+
+        <!--ESTILO-->
+<div class="estiloP">
+<select id="estiloPista">
+    <option value="">Selecione um estilo de Pista</option>
+    <option value="estrada">Circuito de Estrada</option>
+    <option value="rua">Circuito de Rua</option>
+    <option value="autodromo">Autódromo</option>
+</select>
+</div>
+
+
+
+
+        <!--LATITUDE-->
+<div class="latitude">
+        <input required type="text" id="latitude" placeholder="Digite a latitude">
+</div>
+                
+        <!--LONGITUDE-->
+        <div class="longitude">
+        <input required type="text" id="longitude" placeholder="Digite a longitude">
+</div>
+                
+
+<button id="btnCadastro">Cadastrar</button>
+<button id="btnCarregar">Listar Pistas</button>
+</div> 
+
+        <!--NOMEPISTA-->
+<input type="text" id="inputBuscar" placeholder="Digite o nome da pista">
+
+<button id="btnBuscar">Buscar Pista</button>
+<button id="btnDeletar">Deletar Pista</button>
+<img class="bandeira" src="/assets/bandeira-de-chegada-FGdmovqM.png"/>
+
+<br/>
+<h2 id="mapTitulo" style="display: none;">Localização da pista:</h2>
+<div id="map" style="height: 300px; margin-top: 30px;">
+
+</div>
+</div>
+</form>
+<div style="margin-top: 80px;" id="resultados"></div>
+
+</div>
+    
+<script style="margin-top: 30px;" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwrgjVVdSPEeECOiB6FhhCwPPtrskXzFA"></script>
+    <style>
+      #map {
+        display: none;
+      }
+    </style>
+  </body>
+</html>
