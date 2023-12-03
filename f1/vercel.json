@@ -1,5 +1,5 @@
 {
     "version": 2,
-    "builds": [{ "src": "\renataopiloto\f1", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "\renataopiloto\f1$1" }]
+    "builds": [{ "src": "/renataopiloto/f1", "use": "@vercel/node" }],
+    "routes": [{ "src": "/(.*)", "dest": "/renataopiloto/f1/index.html" }]
   }
